@@ -1,3 +1,5 @@
+import os
+import requests
 import socket
 from sys import platform
 import webbrowser
@@ -6,6 +8,7 @@ webbrowser.open(url)
 from colorama import *
 from datetime import datetime
 
+app_name = " WiFi PasS "
 now = datetime.now()
 
 current_time = now.strftime
@@ -17,7 +20,12 @@ myHostName = socket.gethostname()
 s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 
 print("\n===========================================================")
-name = ("""\n                    Hello sir """ +name+Style.RESET_ALL)
+
+
+print(Fore.YELLOW+'\n Welcome you in my program' + app_name + "Made by hxn.py < insta")
+
+
+name = (Fore.WHITE+"""\n                    Hello sir """ +name+Style.RESET_ALL)
 print(name)
 
 import datetime
@@ -36,16 +44,16 @@ a = response["ip"]
 IP = ("""\n                Your Local iP is """+Fore.RED+a+Style.RESET_ALL)
 print(IP)
 
+
 v = (Fore.RED+"""\n                    Your iNFO PROXY is\n"""+Style.RESET_ALL)
 
 print(v)
 print(s)
 
 print("\n===========================================================")
-import webbrowser
+
 url = "https://instagram.com/hxn.py/"
 webbrowser.open(url)
-
 import subprocess
 
 data = subprocess.check_output(['netsh', 'wlan', 'show', 'profiles']).decode('utf-8', errors="backslashreplace").split('\n')
@@ -56,8 +64,10 @@ for i in profiles:
         results = [b.split(":")[1][1:-1] for b in results if "Key Content" in b]
         try:
             print ("{:<30}|  {:<}".format(i, results[0]))
+
         except IndexError:
             print ("{:<30}|  {:<}".format(i, ""))
     except subprocess.CalledProcessError:
         print ("{:<30}|  {:<}".format(i, "ENCODING ERROR"))
 input("")
+
